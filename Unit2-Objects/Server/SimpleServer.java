@@ -1,6 +1,7 @@
+import java.util.*;
+import java.util.concurrent.ExecutionException;
 import java.io.*;
 import java.net.*;
-import java.util.*;
 
 public class SimpleServer {
     private ServerSocket serverSocket;
@@ -43,13 +44,12 @@ public class SimpleServer {
                 String message = input.nextLine();
                 server.sendMessage(message);
                 String response = server.reciveMessage();
-                System.out.println("Client: "+response);
-                if(response.equals("stop")){
+                System.out.println("Client: " + response);
+                if (response.equals("stop")) {
                     break;
                 }
             }
         } catch (Exception e) {
-
         }
     }
 }
